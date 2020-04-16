@@ -1,0 +1,41 @@
+<div class="container">
+  <nav class="blue darken-4 sidenav-trigger pushpin">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><i class="fas fa-laptop-house"></i></a>
+        <a herf="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+        
+          {% if request.user.is_authenticated %}
+            <li><a href="{% if request.user.is_superuser %}/admin {% else %}/user{% endif %}">| {{ request.user.first_name }} {{ request.user.last_name }} |</a></li>
+            <li><a href="/study">Go to Study material</a></li>
+            <li><a href="/logout">Logout</a></li>
+          
+          {% elif not request.user.is_authenticated %}
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+
+          {% endif %}
+        
+        </ul>
+      </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <br>
+    <br>
+      <li><a href="/">Home</a></li>
+      
+      {% if request.user.is_authenticated %}
+          <li><a href="{% if request.user.is_superuser %}/admin {% else %}/user{% endif %}">| {{ request.user.first_name }} {{ request.user.last_name }} |</a></li>
+          <li><a href="/study">Go to Study material</a></li>
+          <li><a href="/logout">Logout</a></li>
+      
+      {% elif not request.user.is_authenticated %}
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+
+      {% endif %}
+  
+    </ul>
+</div>

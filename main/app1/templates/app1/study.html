@@ -1,0 +1,34 @@
+{% extends 'app1/layout.html' %}
+
+{% block content %}
+
+<div align="center">
+    <div class="container">
+        <h1 align="left">
+            Welcome, {{ request.user.first_name }} {{ request.user.last_name }}
+        </h1>
+    </div>
+    <br />
+    <div>
+        <h3>
+            Here is a List of all the offering or the study material.
+        </h3>
+    </div>
+    <br />
+    {% for t in tut %}
+        <a href="{{ t.id }}", style="color:#000">
+            <div class="container card-panel hoverable z-depth-5">
+                <h3 class="black-text">
+                        {{ t.Course_Name }}
+                </h3>
+                <br />
+                <div class="black-text">
+                    {{ t.Course_Description }}
+                </div>
+            </div>
+        </a>
+        <br />
+    {% endfor %}
+</div>
+
+{% endblock %}

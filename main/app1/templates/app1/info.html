@@ -1,0 +1,48 @@
+{% extends 'app1/layout.html' %}
+
+{% block content %}
+
+<div align="center">
+    <div class="container">
+        <h1 align="left">
+            Welcome, {{ request.user.first_name }} {{ request.user.last_name }} to the {{ tut.Course_Name }}
+        </h1>
+    </div>
+    <br />
+    <div class="container card-panel hoverable z-depth-5 black-text">
+        <h3>
+            <u>
+                {{ tut.Course_Name }}
+            </u>
+        </h3>
+        <br />
+        <h4> 
+            The Course Description is as follows:
+        </h4>
+        <br />
+        <div>
+            {{ tut.Course_Description }}
+        </div>
+        <br />
+        <h4> 
+            The Course Information is as follows:
+        </h4>
+        <br />
+        <p>
+            {{ tut.Course_Information|safe }}
+        </p>
+        <br />
+        <div>
+            <h4>
+                Here are some Additional Links for more resource material
+            </h4>
+            <a href="{{ tut.Additional_Information }}">
+                {{ tut.Additional_Information }}
+            </a>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+
+{% endblock %}
