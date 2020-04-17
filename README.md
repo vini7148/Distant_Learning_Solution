@@ -1,6 +1,6 @@
 # Study_from_home_app
 
-This the source code for the hosted website at [Study From Home](vini714841.pythonanywhere.com)
+This the source code for the hosted website at [Study From Home](http://vini714841.pythonanywhere.com)
 
 ## You can also download this repo and host a local runtime of the site
 
