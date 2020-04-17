@@ -78,9 +78,9 @@ def register(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-            login(request, user)
-            messages.info(request, f"You are now logged in as {username}")
-            return redirect("app1:Home")
+            # login(request, user)
+            messages.info(request, f"Login as {username}")
+            return redirect("app1:log_page")
 
         else:
             for msg in form.error_messages:
